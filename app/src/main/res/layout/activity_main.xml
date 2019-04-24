@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:padding="8dp"
+    android:layout_height="match_parent"
+    android:background="@drawable/my_bg"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_skip"
+        android:text="Just Skip"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="25sp"
+        android:fontFamily="@font/bellerose"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:fontFamily="@font/bellerose"
+        android:textSize="22sp"
+        android:layout_above="@id/txt_skip"
+        android:text="Login"
+        android:id="@+id/btn_login"
+        android:background="@color/colorButton"/>
+
+
+
+</RelativeLayout>
