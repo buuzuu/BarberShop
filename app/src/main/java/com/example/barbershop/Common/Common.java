@@ -1,8 +1,14 @@
 package com.example.barbershop.Common;
 
 import com.example.barbershop.Model.Barber;
+import com.example.barbershop.Model.BookingInformation;
 import com.example.barbershop.Model.Salon;
 import com.example.barbershop.Model.User;
+import com.google.firebase.Timestamp;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 public class Common {
 
@@ -19,6 +25,15 @@ public class Common {
     public static String KEY_STEP = "STEP";
     public static String KEY_BARBER_SELECTED = "BARBER_SELECTED";
     public static int TIME_SLOT_TOTAL = 20;
+    public static Object DISABLE_TAG ="DISABLE";
+    public static String KEY_TIME_SLOT = "TIME_SLOT";
+    public static int currentTimeSlot = -1;
+    public static String KEY_CONFIRM_BOOKING = "CONFIRM_BOOKING";
+    public static Calendar bookingDate = Calendar.getInstance();
+    public static SimpleDateFormat simpleFormatDate = new SimpleDateFormat("dd_MM_yyyy");
+    public static String EVENT_URI_CACHE = "URI_EVENT_SAVE";
+    public static BookingInformation currentBooking;
+    public static String currentBookingId ="";
 
     public static String convertTimeSlotToString(int slot) {
 
@@ -69,6 +84,16 @@ public class Common {
                 return "Closed";
 
         }
+
+    }
+
+    public static String convertTimeStampToStringKey(Timestamp timestamp) {
+
+        Date date = timestamp.toDate();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd_MM_yyyy");
+        return  simpleDateFormat.format(date);
+
+
 
     }
 }

@@ -5,9 +5,18 @@ import android.os.Parcelable;
 
 public class Salon implements Parcelable {
 
-    private String name,address,salonId;
+    private String name,address,website,phone,openHours,salonId;
 
     public Salon() {
+    }
+
+    public Salon(String name, String address, String website, String phone, String openHours, String salonId) {
+        this.name = name;
+        this.address = address;
+        this.website = website;
+        this.phone = phone;
+        this.openHours = openHours;
+        this.salonId = salonId;
     }
 
     public String getName() {
@@ -26,6 +35,30 @@ public class Salon implements Parcelable {
         this.address = address;
     }
 
+    public String getWebsite() {
+        return website;
+    }
+
+    public void setWebsite(String website) {
+        this.website = website;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getOpenHours() {
+        return openHours;
+    }
+
+    public void setOpenHours(String openHours) {
+        this.openHours = openHours;
+    }
+
     public String getSalonId() {
         return salonId;
     }
@@ -37,6 +70,9 @@ public class Salon implements Parcelable {
     protected Salon(Parcel in) {
         name = in.readString();
         address = in.readString();
+        website = in.readString();
+        phone = in.readString();
+        openHours = in.readString();
         salonId = in.readString();
     }
 
@@ -61,6 +97,9 @@ public class Salon implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(name);
         dest.writeString(address);
+        dest.writeString(website);
+        dest.writeString(phone);
+        dest.writeString(openHours);
         dest.writeString(salonId);
     }
 }
